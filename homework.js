@@ -55,9 +55,6 @@ function minimum(number) {
 }
 
 
-
-
-
 // 5. There are many techniques to sort arrays in programming. Your programming
 // language will likely include the ability to do this. We are going to
 // implement sorting ourselves, however.
@@ -83,15 +80,46 @@ function minimum(number) {
 // to see how. This may make more sense to you.
 
 
-function selectionSort(numbers)
+function selectionSort(numbers) {
+  
+  var sortedArray = []
+  for (var i = 0; i <numbers.length; i++) {
+   var min = minimum(numbers.slice(i, numbers.length));
+   numbers[numbers.indexOf(min)] = numbers[i];
+   numbers[i] = min;
+  }
+  return numbers;
+}
 
 // 6. Create a function called "createUser" that takes a name and a Date object
 // and returns an object with the keys "name" and "dob" (date of birth) with
 // those values.
 
+function createUser (name, date) {
+  return {
+    name: name,
+    dob: date
+  };
+}
+
 // 7. Create a function called "calculateAge" that takes a user created from
 // createUser and a Date object considered the current date, and calculates the user's
 // age in years on that date. You can use your code from yesterday's homework.
+
+function calculateAge(current, user) {
+var ms =(current.getTime()-birthdate.getTime()) 
+    if (birthdate<=user === 0) {
+      return
+    }
+    if (createUser(name, date) && birthdate<=user) {
+        return Math.trunc(ms/(1000*60*60*24*365.25))
+    } else {
+        return
+   
+      }
+} 
+
+
 
 // 8. Create a function called "addAge" that takes a user created from createUser
 // and a Date object and adds a new key on the user object, "age", with the age
@@ -100,6 +128,13 @@ function selectionSort(numbers)
 // 9. Create a function called "createUsers" that takes two arrays of equal
 // length, the first being a list of names and the second being a list of dates of
 // birth, and returns a new array of objects created from those original arrays.
+
+// function createUsers(array1, array2) {
+//   var newArray []
+//   for (i = 0; i <array1.length; i++ ) {
+
+//   }
+// }
 
 // 10. Create a function called "averageAge" that takes an array of users and
 // a Date object and returns the average age in years of the users on that date.
